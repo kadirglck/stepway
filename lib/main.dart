@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:stepway/character_test/character_test_page.dart';
 import 'package:stepway/onboarding/pages/onboarding_page.dart';
+import 'package:stepway/pages/login_page.dart';
+import 'package:stepway/pages/sign_up.dart';
 import 'package:stepway/pages/starting_page.dart';
 
 void main() async {
@@ -31,28 +33,9 @@ return GetMaterialApp(
 
       //home: StartingPage(),
       //home: OnboardingPage(),
+      home: SignUp(),
+      //home: CharacterTestPage(),
+    );
 
-      home: CharacterTestPage(),
-      theme: ThemeData.dark(),
-      home: Scaffold(
-        body: Container(
-            child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Get.to(JobSelectPage());
-              },
-              child: Text('Job Select Page'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Get.to(SimulationPage());
-              },
-              child: Text('Simulation'),
-            ),
-          ],
-        )),
-      ),
-   
   }
 }
