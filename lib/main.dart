@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stepway/character_test/character_test_page.dart';
 import 'package:stepway/onboarding/pages/onboarding_page.dart';
+import 'package:stepway/pages/starting_page.dart';
 
 void main() => runApp(StepwayApp());
 
@@ -26,8 +27,9 @@ class StepwayApp extends StatelessWidget {
         /* light theme settings */
       ),
 
-      home: OnboardingPage(),
-      // home: CharacterTestPage(),
+      //home: StartingPage(),
+      //home: OnboardingPage(),
+      home: CharacterTestPage(),
     );
   }
 }
