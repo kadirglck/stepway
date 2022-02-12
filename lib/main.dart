@@ -22,12 +22,11 @@ class StepwayApp extends StatelessWidget {
       title: title,
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blue,
         primaryColor: Colors.purple,
       ),
 
       // home: OnboardingPage(),
-
       //home: StartingPage(),
       //home: OnboardingPage(),
 
