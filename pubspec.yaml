@@ -37,6 +37,9 @@ dependencies:
   syncfusion_flutter_sliders: ^19.4.50
   syncfusion_flutter_core: ^19.4.50
 
+  # Introduction Screen
+  introduction_screen: ^2.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:stepway/character_test/character_test_page.dart';
+import 'package:stepway/onboarding/pages/onboarding_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(StepwayApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class StepwayApp extends StatelessWidget {
+  static final String title = 'Stepway';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DEneme',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
       home: CharacterTestPage(),
+      debugShowCheckedModeBanner: false,
+      title: title,
+      theme: ThemeData(primarySwatch: Colors.purple),
+      // home: OnboardingPage(),
     );
   }
 }
