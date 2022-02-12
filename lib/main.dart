@@ -10,11 +10,24 @@ class StepwayApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CharacterTestPage(),
       debugShowCheckedModeBanner: false,
       title: title,
-      theme: ThemeData(primarySwatch: Colors.purple),
-      // home: OnboardingPage(),
+      // themeMode: ThemeMode.light,
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.purple,
+        primaryColor: Colors.purple,
+        /* light theme settings */
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.purple,
+        primaryColor: Colors.purple,
+        /* light theme settings */
+      ),
+
+      home: OnboardingPage(),
+      // home: CharacterTestPage(),
     );
   }
 }
