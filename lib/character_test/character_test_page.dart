@@ -15,9 +15,48 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
       appBar: AppBar(
         title: Text('Character Test'),
       ),
-      body: Column(
+      body: ListView(
         children: [
-          QuestionCard(id: 1, soru: 'Soru 1'),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
+          QuestionCard(
+            id: 0,
+            soru: 'İngilizce seviyeniz nedir?',
+          ),
         ],
       ),
     );
