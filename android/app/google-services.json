@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "134264613597",
+    "project_id": "stepway-11275",
+    "storage_bucket": "stepway-11275.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134264613597:android:9d43a3ee01496455b9c934",
+        "android_client_info": {
+          "package_name": "com.hackathon.stepway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134264613597-b48r2jtf4fuqtq3coq90eevvmmsjjqtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgmqOJLYPatkvGFMJpCkJeRz95iozPbx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134264613597-b48r2jtf4fuqtq3coq90eevvmmsjjqtm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "134264613597-mjl4pb9h6lqg92utb16ldosi575pi5jc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hackathon.stepway"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
