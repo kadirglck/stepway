@@ -5,37 +5,35 @@ import 'package:introduction_screen/introduction_screen.dart';
 class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: IntroductionScreen(
-        showNextButton: false,
-        pages: [
-          PageViewModel(
-            title: 'Stepway',
-            body: 'Stepway is the new way.',
-            image: buildImage(),
-            decoration: getPageDecoration(),
-          ),
-          PageViewModel(
-            title: 'Lorem ipsum',
-            body:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in.',
-            image: buildImage(),
-            decoration: getPageDecoration(),
-          ),
-          PageViewModel(
-            title: 'Lorem ipsum',
-            body:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in.',
-            image: buildImage(),
-            decoration: getPageDecoration(),
-          ),
-        ],
-        done: Text(
-          'Start',
-          style: TextStyle(fontWeight: FontWeight.bold),
+    return IntroductionScreen(
+      showNextButton: false,
+      pages: [
+        PageViewModel(
+          title: 'Stepway',
+          body: 'Stepway is the new way.',
+          image: buildImage(),
+          decoration: getPageDecoration(),
         ),
-        onDone: () {},
+        PageViewModel(
+          title: 'Lorem ipsum',
+          body:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in.',
+          image: buildImage(),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: 'Lorem ipsum',
+          body:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in.',
+          image: buildImage(),
+          decoration: getPageDecoration(),
+        ),
+      ],
+      done: Text(
+        'Start',
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
+      onDone: () {},
     );
   }
 
