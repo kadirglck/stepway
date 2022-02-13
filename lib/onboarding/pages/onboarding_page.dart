@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:stepway/pages/starting_page.dart';
+import 'package:stepway/user_definiton/definiton_pageview.dart';
+import 'package:stepway/user_definiton/input_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   List<String> images = [
@@ -54,7 +56,7 @@ class OnboardingPage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         onDone: () {
-          Get.offAll(() => StartingPage());
+          Get.offAll(() => InputPage());
         },
       ),
     );

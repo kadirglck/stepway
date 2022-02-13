@@ -5,6 +5,7 @@ import 'package:stepway/job_select/job_select_model.dart';
 import 'package:stepway/pages/login_page.dart';
 
 import '../shared/widgets/custom_button.dart';
+import 'package:stepway/shared/widgets/pallette.dart';
 
 class SimulationPage extends StatefulWidget {
   final JobSelectModel? selectedJob;
@@ -56,6 +57,10 @@ class _SimulationPageState extends State<SimulationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: background,
+      appBar: AppBar(
+        backgroundColor: appbarcolor,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -96,7 +101,7 @@ class _SimulationPageState extends State<SimulationPage> {
                         ),
                         title: Text('${answers[index]}'),
                         selectedColor: Colors.white,
-                        selectedTileColor: Colors.green,
+                        selectedTileColor: bluecolor,
                         selected: optionsSelected[index],
                         onTap: () {
                           setState(() {
@@ -119,18 +124,23 @@ class _SimulationPageState extends State<SimulationPage> {
             ),
             CustomButtonWidget(
               onPressed: () {
-                if (questionCount != questionList.length - 1) {
-                  questionCount++;
+                if (optionsSelected.contains(true)) {
+                  if (questionCount != questionList.length - 1) {
+                    questionCount++;
+                  } else {
+                    Get.to(() => LoginPage());
+                  }
+                  optionsSelected = [false, false, false];
                 } else {
-                  Get.to(() => LoginPage());
+                  Get.snackbar('Hata', 'Sorular boş geçilemez',
+                      snackPosition: SnackPosition.BOTTOM);
                 }
-                optionsSelected = [false, false, false];
                 setState(() {});
               },
               title: questionCount != questionList.length - 1
                   ? 'Sonraki'
                   : 'Tamamla',
-              color: Colors.amber,
+              color: pinkcolor,
             )
           ],
         ),
