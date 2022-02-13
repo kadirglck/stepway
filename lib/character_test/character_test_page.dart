@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:stepway/character_result/character_result_view.dart';
 import 'package:stepway/character_test/global_key.dart';
 import 'package:stepway/character_test/models/character_test_model.dart';
 import 'package:stepway/character_test/widgets/question_card.dart';
+import 'package:stepway/shared/widgets/pallette.dart';
 
 import '../job_select/job_select_view.dart';
 
@@ -30,10 +32,14 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: background,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.check),
+        backgroundColor: appbarcolor,
+        child: Icon(
+          Icons.check,
+        ),
         onPressed: () {
-          Get.to(() => JobSelectPage());
+          Get.to(() => CharacterResultPage());
           // cevapList.cevaplar?.forEach((element) {
           //   print(element.id! + ' - ' + element.count.toString());
           // });
@@ -55,6 +61,7 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
       ),
       appBar: AppBar(
         title: Text('Character Test'),
+        backgroundColor: appbarcolor,
       ),
       body: FutureBuilder<QuerySnapshot>(
         future: future(),

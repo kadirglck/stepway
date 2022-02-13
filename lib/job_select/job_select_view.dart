@@ -2,7 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stepway/job_select/job_select_model.dart';
+import 'package:stepway/shared/widgets/custom_button.dart';
 import 'package:stepway/simulation/simulation_view.dart';
+import 'package:stepway/shared/widgets/pallette.dart';
 
 import '../pages/login_page.dart';
 
@@ -39,7 +41,11 @@ class _JobSelectPageState extends State<JobSelectPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Meslek Seçin')),
+      backgroundColor: background,
+      appBar: AppBar(
+        title: Text('Meslek Seçin'),
+        backgroundColor: appbarcolor,
+      ),
       body: Column(
         children: [
           // searchStack(),
@@ -48,7 +54,8 @@ class _JobSelectPageState extends State<JobSelectPage> {
             child: Text('MESLEKLER', style: TextStyle(fontSize: 20)),
           ),
           jobsListView(),
-          ElevatedButton(
+
+          CustomButtonWidget(
             onPressed: () {
               if (selectedJob != null) {
                 Get.to(() => SimulationPage(
@@ -62,13 +69,16 @@ class _JobSelectPageState extends State<JobSelectPage> {
                 );
               }
             },
-            child: Text('Simülasyon'),
+            title: 'Simülasyon',
+            color: pinkcolor,
           ),
-          ElevatedButton(
+
+          CustomButtonWidget(
             onPressed: () {
               Get.to(() => LoginPage());
             },
-            child: Text('Eğitimler ve fırsatlar'),
+            title: 'Eğitim ve Fırsatlar',
+            color: pinkcolor,
           ),
         ],
       ),
@@ -111,7 +121,7 @@ class _JobSelectPageState extends State<JobSelectPage> {
             child: ListTile(
               title: Text(jobSelectList[index].jobName),
               leading: Icon(Icons.add),
-              selectedTileColor: Colors.green,
+              selectedTileColor: bluecolor,
               textColor: Colors.black,
               tileColor: Colors.white,
               selected: jobSelectList[index].isSelect ?? false,
