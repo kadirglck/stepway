@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:stepway/character_test/models/question_model.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+
+import '../global_key.dart';
+import '../models/character_test_model.dart';
 
 class QuestionCard extends StatefulWidget {
   final int id;
   final String soru;
+  final CharacterTestModel? data;
   QuestionCard({
     Key? key,
     required this.id,
     required this.soru,
+    required this.data,
   }) : super(key: key);
 
   @override
@@ -16,6 +22,13 @@ class QuestionCard extends StatefulWidget {
 }
 
 class _QuestionCardState extends State<QuestionCard> {
+  @override
+  void initState() {
+    cevapList.cevaplar = List<QuestionModel>.filled(
+        widget.id, QuestionModel(id: widget.data!.id, count: 0));
+    super.initState();
+  }
+
   List<int?>? cevaplar = [];
   double _value = 0.0;
   @override
@@ -34,7 +47,7 @@ class _QuestionCardState extends State<QuestionCard> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
-                    (widget.id + 1).toString() + " ) " + widget.soru,
+                    widget.id.toString() + " ) " + widget.soru,
                     style: TextStyle(fontSize: 17),
                   ),
                 ),
@@ -60,7 +73,11 @@ class _QuestionCardState extends State<QuestionCard> {
                     onChanged: (dynamic values) {
                       setState(() {
                         _value = values;
-                        // cevapList.cevaplar[widget.id] = _value.toInt();
+                        cevapList.cevaplar![widget.id - 1] = QuestionModel(
+                          id: widget.data!.id,
+                          count: _value.toInt(),
+                        );
+                        // print(_value);
                       });
                     },
                     enableTooltip: false,
