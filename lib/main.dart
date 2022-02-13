@@ -10,7 +10,7 @@ void main() async {
 }
 
 class StepwayApp extends StatelessWidget {
-  static final String title = 'Stepwaysss';
+  static final String title = 'Stepways';
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,7 @@ class StepwayApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         primaryColor: Colors.purple,
       ),
-
-      // home: OnboardingPage(),
-      // home: StartingPage(),
       home: OnboardingPage(),
-
-      // home: CharacterTestPage(),
     );
   }
 }

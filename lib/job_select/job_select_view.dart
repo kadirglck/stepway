@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stepway/pages/education_page.dart';
 
-import '../pages/login_page.dart';
 import '../shared/widgets/custom_button.dart';
 import '../shared/widgets/pallette.dart';
 import '../simulation/simulation_view.dart';
