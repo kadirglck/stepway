@@ -5,7 +5,8 @@ import 'package:stepway/shared/widgets/custom_button.dart';
 import 'package:stepway/shared/widgets/pallette.dart';
 
 class CharacterResultPage extends StatelessWidget {
-  const CharacterResultPage({Key? key}) : super(key: key);
+  final String? jobName;
+  const CharacterResultPage({Key? key, this.jobName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +27,15 @@ class CharacterResultPage extends StatelessWidget {
               children: [
                 Text(
                   texts[0],
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   texts[1],
                   style: TextStyle(fontSize: 18),
+                  textAlign: TextAlign.center,
                 ),
                 CircleAvatar(
                   minRadius: Get.width * 0.30,
@@ -38,7 +43,7 @@ class CharacterResultPage extends StatelessWidget {
                       'https://firebasestorage.googleapis.com/v0/b/stepway-11275.appspot.com/o/assets%2Fcourtrooms-1.jpeg?alt=media&token=067a529d-5653-45b9-9498-6abba721c6a5'),
                 ),
                 Text(
-                  'Meslek ismi',
+                  jobName == null ? '-' : jobName.toString(),
                   style: TextStyle(fontSize: 40),
                 ),
                 CustomButtonWidget(

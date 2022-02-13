@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,6 +25,9 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
     super.initState();
   }
 
+  var rng = Random();
+
+  List<String> jobNames = [];
   Future<QuerySnapshot<Object?>>? future() {
     return FirebaseFirestore.instance.collection('characterTest').get();
   }
@@ -39,28 +44,13 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
           Icons.check,
         ),
         onPressed: () {
-          Get.to(() => CharacterResultPage());
-          // cevapList.cevaplar?.forEach((element) {
-          //   print(element.id! + ' - ' + element.count.toString());
-          // });
-          //butona basıldığında cevaplarının toplamını hesapla
-          // temp = null;
-          // cevapList.cevaplar!.forEach((element) {
-          //   if (temp == null) {
-          //     temp = element.id;
-          //   } else {
-          //     if (temp != element.id) {
-          //       print(temp! + ' - ' + intTemp.toString());
-          //       intTemp = 0;
-          //       temp = element.id;
-          //     }
-          //   }
-          //   intTemp += element.count!;
-          // });
+          Get.to(() => CharacterResultPage(
+                jobName: jobNames[rng.nextInt(2)],
+              ));
         },
       ),
       appBar: AppBar(
-        title: Text('Character Test'),
+        title: Text('Kişilik Testi'),
         backgroundColor: appbarcolor,
       ),
       body: FutureBuilder<QuerySnapshot>(
@@ -72,6 +62,7 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
             return ListView.builder(
               itemCount: snapshot.data?.docs.length,
               itemBuilder: (context, index) {
+                jobNames.add(snapshot.data!.docs[index].get('about'));
                 return questionCard(snapshot.data!.docs[index]);
               },
             );
@@ -83,7 +74,6 @@ class _CharacterTestPageState extends State<CharacterTestPage> {
       ),
     );
   }
-  // 5 + 4 toplayan fonksiyon
 
   int count = 0;
 
