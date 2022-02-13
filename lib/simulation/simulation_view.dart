@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stepway/job_select/job_select_model.dart';
+import 'package:stepway/pages/login_page.dart';
 
 import '../shared/widgets/custom_button.dart';
 
@@ -17,12 +19,8 @@ class SimulationPage extends StatefulWidget {
 
 class _SimulationPageState extends State<SimulationPage> {
   late MediaQueryData queryData;
-  List<String> options = [
-    'a',
-    'b',
-    'c',
-  ];
-  List<bool> optionsSelected = [false, false, false, false];
+  List<String> options = ['A', 'B', 'C'];
+  List<bool> optionsSelected = [false, false, false];
   List<String> answers = [
     'Hoşlanmam',
     'Etkilemez',
@@ -30,10 +28,13 @@ class _SimulationPageState extends State<SimulationPage> {
   ];
   int questionNumber = 0;
   int? lastIndex;
+  int questionCount = 0;
+  String? image;
   @override
   void initState() {
     print(widget.selectedJob!.jobId);
     getQuestions();
+    questionCount = 0;
     super.initState();
   }
 
@@ -47,6 +48,7 @@ class _SimulationPageState extends State<SimulationPage> {
         .then((value) {
       print(value.docs.first.get('questions'));
       questionList = List<String>.from(value.docs.first.get('questions'));
+      image = value.docs.first.get('image');
     });
     setState(() {});
   }
@@ -61,17 +63,20 @@ class _SimulationPageState extends State<SimulationPage> {
               color: Colors.black,
               width: MediaQuery.of(context).size.width,
               height: 400,
-              child: Image.network(
-                'https://boardinginfo.com/wp-content/uploads/2018/01/cockpit.jpg',
-                fit: BoxFit.cover,
-              ),
+              child: image == null
+                  ? Container()
+                  : Image.network(
+                      image!,
+                      fit: BoxFit.cover,
+                    ),
             ),
             Column(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    questionList.isEmpty ? '' : questionList[0],
+                    questionList.isEmpty ? '' : questionList[questionCount],
                     style: TextStyle(
                       fontSize: 22,
                     ),
@@ -86,7 +91,8 @@ class _SimulationPageState extends State<SimulationPage> {
                       child: ListTile(
                         leading: Text(
                           '${options[index]}',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                         title: Text('${answers[index]}'),
                         selectedColor: Colors.white,
@@ -112,8 +118,18 @@ class _SimulationPageState extends State<SimulationPage> {
               ],
             ),
             CustomButtonWidget(
-              onPressed: () {},
-              title: 'Sonraki',
+              onPressed: () {
+                if (questionCount != questionList.length - 1) {
+                  questionCount++;
+                } else {
+                  Get.to(() => LoginPage());
+                }
+                optionsSelected = [false, false, false];
+                setState(() {});
+              },
+              title: questionCount != questionList.length - 1
+                  ? 'Sonraki'
+                  : 'Tamamla',
               color: Colors.amber,
             )
           ],
