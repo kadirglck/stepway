@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:stepway/job_select/job_select_model.dart';
 import 'package:stepway/simulation/simulation_view.dart';
 
+import '../pages/login_page.dart';
+
 class JobSelectPage extends StatefulWidget {
   const JobSelectPage({Key? key}) : super(key: key);
 
@@ -12,20 +14,15 @@ class JobSelectPage extends StatefulWidget {
 }
 
 class _JobSelectPageState extends State<JobSelectPage> {
-  bool isSelected = false;
-  List<String> jobDummy = ['doctor', 'nurse', 'pilot'];
-  List<bool> jobSelected = [false, false, false];
-  List<IconData> icons = [Icons.abc_rounded, Icons.ac_unit, Icons.access_alarm];
   List<String> items = [];
   int? lastIndex;
   List<JobSelectModel> jobSelectList = [];
   List<JobSelectModel> searchJobList = [];
-
+  JobSelectModel? selectedJob;
   @override
   void initState() {
     getJobs();
     super.initState();
-    items = jobDummy;
   }
 
   getJobs() async {
@@ -35,21 +32,6 @@ class _JobSelectPageState extends State<JobSelectPage> {
       });
     });
     setState(() {});
-  }
-
-  onSearch(String search) {
-    setState(
-      () {
-        searchJobList = jobSelectList
-            .where((element) =>
-                element.jobName.toLowerCase().contains(search.toLowerCase()))
-            .toList();
-        // items = jobDummy
-        //     .where((jobDummy) => jobDummy.toLowerCase().contains(search))
-        //     .toList();
-      },
-    );
-    print(search);
   }
 
   TextEditingController textfield1 = TextEditingController();
@@ -67,12 +49,27 @@ class _JobSelectPageState extends State<JobSelectPage> {
           ),
           jobsListView(),
           ElevatedButton(
-              onPressed: () {
-                Get.to(() => SimulationPage());
-              },
-              child: Text('Simülasyon')),
+            onPressed: () {
+              if (selectedJob != null) {
+                Get.to(() => SimulationPage(
+                      selectedJob: selectedJob,
+                    ));
+              } else {
+                Get.snackbar(
+                  'Hata',
+                  'Lütfen Meslek Seçiniz!',
+                  snackPosition: SnackPosition.BOTTOM,
+                );
+              }
+            },
+            child: Text('Simülasyon'),
+          ),
           ElevatedButton(
-              onPressed: () {}, child: Text('Eğitimler ve fırsatlar'))
+            onPressed: () {
+              Get.to(() => LoginPage());
+            },
+            child: Text('Eğitimler ve fırsatlar'),
+          ),
         ],
       ),
     );
@@ -83,9 +80,7 @@ class _JobSelectPageState extends State<JobSelectPage> {
       padding: EdgeInsets.all(10),
       child: TextField(
         autocorrect: true,
-        onChanged: (value) {
-          onSearch(value);
-        },
+        onChanged: (value) {},
         controller: textfield1,
         decoration: InputDecoration(
           suffix: Icon(
@@ -126,23 +121,15 @@ class _JobSelectPageState extends State<JobSelectPage> {
                     lastIndex = index;
                     jobSelectList[index].isSelect =
                         !jobSelectList[index].isSelect!;
+                    selectedJob = jobSelectList[index];
                   } else {
                     jobSelectList[lastIndex!].isSelect = false;
                     lastIndex = index;
                     jobSelectList[index].isSelect =
                         !jobSelectList[index].isSelect!;
+                    selectedJob = jobSelectList[index];
                   }
                 });
-                // setState(() {
-                //   if (lastIndex != null) {
-                //     jobSelected[lastIndex!] = false;
-                //     jobSelected[index] = true;
-                //     lastIndex = index;
-                //   } else {
-                //     lastIndex = index;
-                //     jobSelected[index] = !jobSelected[index];
-                //   }
-                // });
               },
             ),
           );
