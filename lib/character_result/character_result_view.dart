@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepway/job_select/job_select_view.dart';
-import 'package:stepway/shared/widgets/custom_button.dart';
-import 'package:stepway/shared/widgets/pallette.dart';
+import '../job_select/job_select_view.dart';
+import '../shared/widgets/custom_button.dart';
+import '../shared/widgets/pallette.dart';
 
 class CharacterResultPage extends StatelessWidget {
   final String? jobName;

@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepway/job_select/job_select_model.dart';
-import 'package:stepway/pages/login_page.dart';
+import '../job_select/job_select_model.dart';
+import '../pages/education_page.dart';
 
 import '../shared/widgets/custom_button.dart';
-import 'package:stepway/shared/widgets/pallette.dart';
+import '../shared/widgets/pallette.dart';
 
 class SimulationPage extends StatefulWidget {
   final JobSelectModel? selectedJob;
@@ -128,12 +128,12 @@ class _SimulationPageState extends State<SimulationPage> {
                   if (questionCount != questionList.length - 1) {
                     questionCount++;
                   } else {
-                    Get.to(() => LoginPage());
+                    Get.to(() => EducationPage());
                   }
                   optionsSelected = [false, false, false];
                 } else {
                   Get.snackbar('Hata', 'Sorular boş geçilemez',
-                      snackPosition: SnackPosition.BOTTOM);
+                      snackPosition: SnackPosition.TOP);
                 }
                 setState(() {});
               },

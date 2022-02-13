@@ -3,13 +3,10 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepway/character_result/character_result_view.dart';
-import 'package:stepway/character_test/global_key.dart';
-import 'package:stepway/character_test/models/character_test_model.dart';
-import 'package:stepway/character_test/widgets/question_card.dart';
-import 'package:stepway/shared/widgets/pallette.dart';
-
-import '../job_select/job_select_view.dart';
+import '../character_result/character_result_view.dart';
+import 'models/character_test_model.dart';
+import 'widgets/question_card.dart';
+import '../shared/widgets/pallette.dart';
 
 class CharacterTestPage extends StatefulWidget {
   CharacterTestPage({Key? key}) : super(key: key);

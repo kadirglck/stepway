@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stepway/character_test/models/question_model.dart';
+import '../models/question_model.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 

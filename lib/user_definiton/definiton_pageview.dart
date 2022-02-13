@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepway/pages/starting_page.dart';
+import '../pages/starting_page.dart';
 
 class DefinitonPage extends StatefulWidget {
   const DefinitonPage({Key? key}) : super(key: key);
