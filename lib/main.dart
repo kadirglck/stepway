@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import 'package:stepway/character_test/character_test_page.dart';
 import 'package:stepway/onboarding/pages/onboarding_page.dart';
 import 'package:stepway/pages/starting_page.dart';
@@ -18,9 +16,7 @@ class StepwayApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: title,
       theme: ThemeData(
@@ -30,11 +26,10 @@ class StepwayApp extends StatelessWidget {
       ),
 
       // home: OnboardingPage(),
-      //home: StartingPage(),
-      //home: OnboardingPage(),
+      // home: StartingPage(),
+      home: OnboardingPage(),
 
-      home: CharacterTestPage(),
-
+      // home: CharacterTestPage(),
     );
   }
 }
