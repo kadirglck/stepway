@@ -1,16 +1,16 @@
 # stepway
  Flutter Fest Hackathon
 
-<img src="images/app1.png" alt="drawing" width="100"/>
-<img src="images/app2.png" alt="drawing" width="100"/>
-<img src="images/app3.png" alt="drawing" width="100"/>
-<img src="images/app4.png" alt="drawing" width="100"/>
-<img src="images/app5.png" alt="drawing" width="100"/>
-<img src="images/app6.png" alt="drawing" width="100"/>
-<img src="images/app7.png" alt="drawing" width="100"/>
-<img src="images/app8.png" alt="drawing" width="100"/>
-<img src="images/app9.png" alt="drawing" width="100"/>
-<img src="images/app10.png" alt="drawing" width="100"/>
+<img src="images/app1.png" alt="drawing" width="200"/>
+<img src="images/app2.png" alt="drawing" width="200"/>
+<img src="images/app3.png" alt="drawing" width="200"/>
+<img src="images/app4.png" alt="drawing" width="200"/>
+<img src="images/app5.png" alt="drawing" width="200"/>
+<img src="images/app6.png" alt="drawing" width="200"/>
+<img src="images/app7.png" alt="drawing" width="200"/>
+<img src="images/app8.png" alt="drawing" width="200"/>
+<img src="images/app9.png" alt="drawing" width="200"/>
+<img src="images/app10.png" alt="drawing" width="200"/>
 
 
 
