@@ -12,7 +12,7 @@ void main() async {
 }
 
 class StepwayApp extends StatelessWidget {
-  static final String title = 'Stepway';
+  static final String title = 'Stepwaysss';
 
   @override
   Widget build(BuildContext context) {
