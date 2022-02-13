@@ -21,7 +21,10 @@ class CustomButtonWidget extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title!,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         style: ButtonStyle(
           //witdh değerini sildim onun yerine horizontal padding değeri verdim

@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:stepway/job_select/job_select_view.dart';
+import 'package:stepway/shared/widgets/custom_button.dart';
+import 'package:stepway/shared/widgets/pallette.dart';
+
+class CharacterResultPage extends StatelessWidget {
+  const CharacterResultPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> texts = [
+      'Karakter analizini tamamladınız!',
+      'Size uygun olduğunu düşündüğümüz meslek',
+    ];
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: appbarcolor,
+      ),
+      body: Center(
+        child: Card(
+          margin: EdgeInsets.all(50),
+          color: appbarcolor,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  texts[0],
+                  style: TextStyle(fontSize: 25),
+                ),
+                Text(
+                  texts[1],
+                  style: TextStyle(fontSize: 18),
+                ),
+                CircleAvatar(
+                  minRadius: Get.width * 0.30,
+                  backgroundImage: NetworkImage(
+                      'https://firebasestorage.googleapis.com/v0/b/stepway-11275.appspot.com/o/assets%2Fcourtrooms-1.jpeg?alt=media&token=067a529d-5653-45b9-9498-6abba721c6a5'),
+                ),
+                Text(
+                  'Meslek ismi',
+                  style: TextStyle(fontSize: 40),
+                ),
+                CustomButtonWidget(
+                  onPressed: () {
+                    Get.to(JobSelectPage());
+                  },
+                  title: 'Meslek Seçim',
+                  color: pinkcolor,
+                )
+              ]),
+        ),
+      ),
+    );
+  }
+}

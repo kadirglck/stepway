@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stepway/character_test/character_test_page.dart';
 import 'package:stepway/job_select/job_select_view.dart';
+import 'package:stepway/shared/widgets/custom_button.dart';
+import 'package:stepway/shared/widgets/pallette.dart';
 
 class StartingPage extends StatelessWidget {
   final buttonStyle = ElevatedButton.styleFrom(
@@ -12,9 +14,8 @@ class StartingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color background = Color.fromRGBO(205, 240, 234, 1);
-    Color appbarcolor = Color.fromRGBO(196, 144, 228, 1);
     return Scaffold(
+      backgroundColor: background,
       appBar: AppBar(
         title: Text('Stepway'),
         backgroundColor: appbarcolor,
@@ -28,17 +29,19 @@ class StartingPage extends StatelessWidget {
               fit: BoxFit.cover,
               width: Get.width * 0.7,
             ),
-            ElevatedButton(
-              child: Text('Ne istediğimi biliyorum'),
+            CustomButtonWidget(
               onPressed: () {
                 Get.to(JobSelectPage());
               },
-              style: buttonStyle,
+              title: 'Ne istediğimi biliyorum',
+              color: pinkcolor,
             ),
-            ElevatedButton(
-              onPressed: () => Get.to(() => CharacterTestPage()),
-              child: Text('Ne istediğimi bilmiyorum'),
-              style: buttonStyle,
+            CustomButtonWidget(
+              onPressed: () {
+                Get.to(CharacterTestPage());
+              },
+              title: 'Ne istediğimi bilmiyorum',
+              color: pinkcolor,
             ),
           ],
         ),
