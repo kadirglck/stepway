@@ -2,16 +2,16 @@
  Flutter Fest Hackathon
 
 <p float="left">
-<img src="images/app1.png" alt="drawing" width="450"/>
-<img src="images/app2.png" alt="drawing" width="450"/>
-<img src="images/app3.png" alt="drawing" width="450"/>
-<img src="images/app4.png" alt="drawing" width="450"/>
-<img src="images/app5.png" alt="drawing" width="450"/>
-<img src="images/app6.png" alt="drawing" width="450"/>
-<img src="images/app7.png" alt="drawing" width="450"/>
-<img src="images/app8.png" alt="drawing" width="450"/>
-<img src="images/app9.png" alt="drawing" width="450"/>
-<img src="images/app10.png" alt="drawing" width="450"/>
+<img src="images/app1.png" alt="drawing" width="250"/>
+<img src="images/app2.png" alt="drawing" width="250"/>
+<img src="images/app3.png" alt="drawing" width="250"/>
+<img src="images/app4.png" alt="drawing" width="250"/>
+<img src="images/app5.png" alt="drawing" width="250"/>
+<img src="images/app6.png" alt="drawing" width="250"/>
+<img src="images/app7.png" alt="drawing" width="250"/>
+<img src="images/app8.png" alt="drawing" width="250"/>
+<img src="images/app9.png" alt="drawing" width="250"/>
+<img src="images/app10.png" alt="drawing" width="250"/>
 </p>
 
 
