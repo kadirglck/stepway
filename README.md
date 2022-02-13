@@ -1,16 +1,17 @@
 # stepway
  Flutter Fest Hackathon
 
-![App1](images/app1.png)
-![App2](images/app2.png)
-![App3](images/app3.png)
-![App4](images/app4.png)
-![App5](images/app5.png)
-![App6](images/app6.png)
-![App7](images/app7.png)
-![App8](images/app8.png)
-![App9](images/app9.png)
-![App10](images/app10.png)
+<img src="images/app1.png" alt="drawing" width="100"/>
+<img src="images/app2.png" alt="drawing" width="100"/>
+<img src="images/app3.png" alt="drawing" width="100"/>
+<img src="images/app4.png" alt="drawing" width="100"/>
+<img src="images/app5.png" alt="drawing" width="100"/>
+<img src="images/app6.png" alt="drawing" width="100"/>
+<img src="images/app7.png" alt="drawing" width="100"/>
+<img src="images/app8.png" alt="drawing" width="100"/>
+<img src="images/app9.png" alt="drawing" width="100"/>
+<img src="images/app10.png" alt="drawing" width="100"/>
+
 
 
 # Firebase
