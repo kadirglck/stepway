@@ -26,10 +26,10 @@ class StepwayApp extends StatelessWidget {
       ),
 
       // home: OnboardingPage(),
-      //home: StartingPage(),
-      //home: OnboardingPage(),
+      // home: StartingPage(),
+      home: OnboardingPage(),
 
-      home: CharacterTestPage(),
+      // home: CharacterTestPage(),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:stepway/character_test/character_test_page.dart';
 
 class StartingPage extends StatelessWidget {
   final buttonStyle = ElevatedButton.styleFrom(
@@ -21,7 +23,7 @@ class StartingPage extends StatelessWidget {
               style: buttonStyle,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => CharacterTestPage()),
               child: Text('Ne istediğimi bilmiyorum'),
               style: buttonStyle,
             ),
