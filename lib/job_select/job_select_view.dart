@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepway/job_select/job_select_model.dart';
-import 'package:stepway/shared/widgets/custom_button.dart';
-import 'package:stepway/simulation/simulation_view.dart';
-import 'package:stepway/shared/widgets/pallette.dart';
+import 'package:stepway/pages/education_page.dart';
 
 import '../pages/login_page.dart';
+import '../shared/widgets/custom_button.dart';
+import '../shared/widgets/pallette.dart';
+import '../simulation/simulation_view.dart';
+import 'job_select_model.dart';
 
 class JobSelectPage extends StatefulWidget {
   const JobSelectPage({Key? key}) : super(key: key);
@@ -75,7 +76,7 @@ class _JobSelectPageState extends State<JobSelectPage> {
 
           CustomButtonWidget(
             onPressed: () {
-              Get.to(() => LoginPage());
+              Get.to(() => EducationPage());
             },
             title: 'Eğitim ve Fırsatlar',
             color: pinkcolor,
